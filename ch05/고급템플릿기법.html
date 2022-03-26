@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" context="width=device-width, initial-scale=1.0">
+        <title>directive</title>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+        <div id="app">
+            <p>{{ reversedMessage }}</p>
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!'
+                },
+                // View와 연산을 분리하는 느낌?
+                computed: {
+                    reversedMessage: function() {
+                        return this.message.split('').reverse().join('');
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

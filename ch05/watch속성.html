@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" context="width=device-width, initial-scale=1.0">
+        <title>watch</title>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <div>
+            watch 속성은 데이터 변화를 감지하여 자동으로 특정 로직을 수행한다.
+            <br>
+            데이터 호출과 같이 시간이 상대적으로 더 많이 소모되는 비동기 처리에 적합하다.
+        </div>
+        <div id="app">
+            <input v-model="message">
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!'
+                },
+                watch: {
+                    message: function(data) {
+                        console.log("message의 값이 바뀝니다 : ", data);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

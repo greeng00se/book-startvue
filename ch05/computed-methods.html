@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" context="width=device-width, initial-scale=1.0">
+        <title>computed속성과 methods속성의 차이점</title>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <div>
+            computed 속성은 데이터가 변경하지 않는 한 계산 값을 캐싱하고 있다가 필요할 때 반환 한다.<br>
+            methods 속성은 수행할 때 마다 연산을 하기 때문에 캐싱 X
+            
+        </div>
+        <div id="app">
+            <p>{{ message }}</p>>
+            <button v-on:click="reverseMsg">문자열 역순</button>
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!'
+                },
+                methods: {
+                    reverseMsg: function() {
+                        this.message = this.message.split('').reverse().join('');
+                        return this.message;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
